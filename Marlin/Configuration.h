@@ -529,7 +529,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 4000, 500 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.12*2, 94.12, 400, 300 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -758,7 +758,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR false
+#define INVERT_E0_DIR true
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -768,7 +768,7 @@
 
 #define NO_MOTION_BEFORE_HOMING  // Inhibit movement until all axes have been homed
 
-#define Z_HOMING_HEIGHT 5  // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
+#define Z_HOMING_HEIGHT 10  // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
                              // Be sure you have this distance over your Z_MAX_POS in case.
 
 // Direction of endstops when homing; 1=MAX, -1=MIN
@@ -781,13 +781,13 @@
 
 // The size of the print bed
 #define X_BED_SIZE 240
-#define Y_BED_SIZE 160
+#define Y_BED_SIZE 156
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -25
-#define Y_MIN_POS 0
+#define X_MIN_POS -37
+#define Y_MIN_POS -10
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE*2
+#define X_MAX_POS (X_BED_SIZE+20)
 #define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 140
 
@@ -1034,8 +1034,8 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT (X_MIN_POS+25)    // X point for Z homing when homing all axes (G28).
-  #define Z_SAFE_HOMING_Y_POINT (Y_MIN_POS)    // Y point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_X_POINT (0)    // X point for Z homing when homing all axes (G28).
+  #define Z_SAFE_HOMING_Y_POINT (0)    // Y point for Z homing when homing all axes (G28).
 #endif
 
 // Homing speeds (mm/m)
