@@ -80,18 +80,21 @@
    *
    * This configuration uses the following arrangement:
    *
-   * EXP1 D37 = EN2   D35 = EN1     EXP2 D50 = MISO  D52 = SCK
-   *      D17 = BLUE  D16 = RED          D31 = ENC   D53 = SDCS
-   *      D23 = KILL  D25 = BUZZ         D33 = ---   D51 = MOSI
-   *      D27 = A0    D29 = LCS          D49 = SDCD  RST = ---
-   *      GND = GND   5V  = 5V           GND = ---   D41 = ---
+   * config for ender display
+   * 5V = PIN1                        D41 = PIN1
+   * EXP1 D37 = BUZZ   D35 = ENC      EXP2 D50 = MISO    D52 = SCK
+   *      D17 = LCDE   D16 = LCDRS         D31 = EN2     D53 = SDCS
+   *      D23 = LCD4   D25 = LCD5          D33 = EN1     D51 = MOSI
+   *      D27 = LCD6   D29 = LCD7          D49 = SDCD    RST = RESET
+   *      GND = GND    5V  = 5V            GND = GND     D41 = KILL
+   *
    */
+
+
 
   #undef BTN_EN1
   #undef BTN_EN2
   #undef BTN_ENC
-  #undef DOGLCD_A0
-  #undef DOGLCD_CS
   #undef SD_DETECT_PIN
   #undef BEEPER_PIN
   #undef KILL_PIN
@@ -104,19 +107,13 @@
   #define SD_DETECT_PIN   49
 
   // white                ENCA
-  #define BTN_EN1         35
+  #define BTN_EN1         33
 
   // green                ENCB
-  #define BTN_EN2         37
+  #define BTN_EN2         31
 
   // purple               ENCBTN
-  #define BTN_ENC         31
-
-  // brown                A0
-  #define DOGLCD_A0       27
-
-  // green/white          LCS
-  #define DOGLCD_CS       29
+  #define BTN_ENC         35
 
                        // 50    gray   MISO
                        // 51    yellow MOSI
@@ -130,15 +127,17 @@
   //
 
   // blue                 BTN
-  #define KILL_PIN        23
+  #define KILL_PIN        41
 
   // green                BUZZER
-  #define BEEPER_PIN      25
+  #define BEEPER_PIN      37
 
-  // yellow               RED-LED
-  #define STAT_LED_RED_PIN 16
+  #define LCD_PINS_RS     16
+  #define LCD_PINS_ENABLE 17
+  #define LCD_PINS_D4     23
+  #define LCD_PINS_D5     25
+  #define LCD_PINS_D6     27
+  #define LCD_PINS_D7     29
 
-  // white                BLUE-LED
-  #define STAT_LED_BLUE_PIN 17
 
 #endif
