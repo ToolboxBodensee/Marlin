@@ -1,4 +1,7 @@
 # Marlin 3D Printer Firmware
+
+**Entwicklung nur auf [GitLab](https://gitlab.com/ToolboxBodensee/3d-druck/Marlin). Auf GitHub befindet sich lediglich ein Mirror**
+
 <img align="right" src="../../raw/1.1.x/buildroot/share/pixmaps/logo/marlin-250.png" />
 
 ## Marlin 1.1
